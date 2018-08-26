@@ -83,6 +83,10 @@ def handle_message(event):
     uid = profile.user_id
     message = event.message.text
     
+    print(name)
+    print(uid)
+    print(message)
+    
     if mongodb.get_ready(uid,'users') ==1 :
         mongodb.update_byid(uid,{'ready':0},'users')
         casttext = name+' 對大家說： '+message
